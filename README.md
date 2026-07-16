@@ -1,4 +1,4 @@
-# 杉並区 道路交通騒音3Dマップ（試作版）
+# 杉並区 道路交通騒音3Dマップ
 
 **デモ: https://nevaseme.github.io/plateau-noise-map/**
 
