@@ -20,7 +20,7 @@
 ## 使用データ
 
 | データ | 発行元 | 入手先・ライセンス |
-|---|---|---|---|
+|---|---|---|
 | PLATEAU 3D都市モデル 杉並区 2024年度（CityGML） | 国土交通省 | [G空間情報センター](https://www.geospatial.jp/ckan/dataset/plateau-13115-suginami-ku-2024)（オープンデータ・出典明記で利用可） |
 | 令和3年度 道路交通センサス（箇所別基本表・時間帯別交通量表） | 国土交通省 | [国土交通省](https://www.mlit.go.jp/road/census/r3/) |
 | 道路中心線 | © OpenStreetMap contributors | [ODbL](https://www.openstreetmap.org/copyright) |
