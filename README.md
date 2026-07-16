@@ -1,0 +1,41 @@
+# 杉並区 道路交通騒音3Dマップ（試作版）
+
+**デモ: https://nevaseme.github.io/plateau-noise-map/**
+
+国土交通省の3D都市モデル **PLATEAU** と、実測の交通量データ（令和3年度 道路交通センサス）から、
+建物の「**何階の、どの外壁が、どれくらいうるさいか**」を計算した地図です。
+表示エリアは東京都杉並区の環七通り×青梅街道（高円寺陸橋）周辺、約1km四方・建物4,509棟です。
+
+- 音の計算式は日本音響学会の標準モデル **ASJ RTN-Model 2018** に準拠（距離減衰・空気吸収・建物による回折）
+- 建物による音の遮蔽・回り込み（回折）を、PLATEAUの3D形状から計算
+- 昼（6〜22時）/ 夜（22〜6時）の切り替え、建物クリックで階ごとの値を表示
+- 灰色 = 対象道路（幹線道路）から200m以上離れており、この計算の対象外
+- 東京都の常時監視6地点の実測値と比較し、誤差はRMSEで昼7.0dB / 夜6.6dB（パラメータ較正なし）
+
+## 注意
+
+これは幹線道路の自動車騒音だけを対象にした試作版です。生活道路の音・建物での反射・気象の影響は
+含まれていないため、実際の騒音を保証するものではありません。
+
+## 使用データ
+
+| データ | 発行元 | このプロジェクトでの用途 | 入手先・ライセンス |
+|---|---|---|---|
+| PLATEAU 3D都市モデル 杉並区 2024年度（CityGML） | 国土交通省 | 建物の形・高さ・階数。音をさえぎる障害物と、階ごとの受音点の生成 | [G空間情報センター](https://www.geospatial.jp/ckan/dataset/plateau-13115-suginami-ku-2024)（オープンデータ・出典明記で利用可） |
+| 令和3年度 道路交通センサス（箇所別基本表・時間帯別交通量表） | 国土交通省 | 区間ごとの交通量・大型車混入率・旅行速度。音源の強さの根拠 | [国土交通省](https://www.mlit.go.jp/road/census/r3/) |
+| 道路中心線 | © OpenStreetMap contributors | センサスの調査区間（表データ）を地図上の線に対応付ける骨格 | [ODbL](https://www.openstreetmap.org/copyright) |
+| 自動車騒音 常時監視結果（令和5年度） | 東京都環境局 | 計算値と実測値の答え合わせ（検証）。計算には未使用 | [東京都環境局](https://www.kankyo.metro.tokyo.lg.jp/vehicle/noise/result/cyousakekka/reiwa5) |
+| ASJ RTN-Model 2018（計算式） | 日本音響学会 | 車のパワーレベル・距離減衰・回折の予測式一式 | [国総研 参考資料PDF](https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1124pdf/ks1124_08.pdf)（学会誌75巻4号の転載・全文公開） |
+
+このリポジトリに含まれるのは、上記データから**計算した結果**（建物別・階別の騒音値GeoJSON）と
+ブラウザ表示用のコードだけです。元データそのものは含まれません（各リンクから誰でも入手できます）。
+
+計算方法・検証の詳細・既知の限界は、プロジェクト文書（docs/project-overview.md、非公開リポジトリ）に
+記録しています。
+
+---
+
+Per-floor road-traffic noise map for Suginami, Tokyo, computed from open data
+(PLATEAU 3D city model + national road traffic census + OpenStreetMap centerlines)
+with the ASJ RTN-Model 2018, validated against Tokyo's continuous roadside noise
+monitoring (RMSE 7.0/6.6 dB day/night, uncalibrated).

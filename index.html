@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PLATEAUの3D都市モデルから計算した、建物・階別の道路交通騒音マップ（杉並区パイロット版）。">
+    <title>杉並区 道路交通騒音3Dマップ（試作版）</title>
+    <link rel="stylesheet" href="./dist/app.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <div id="map" aria-label="建物・階別の3D騒音マップ"></div>
+
+      <header class="title-panel">
+        <p class="project-label">PLATEAU × 道路交通センサス</p>
+        <h1>建物・階別の騒音マップ</h1>
+        <p>各階の「最もうるさい外壁」の騒音レベル（LAeq）</p>
+      </header>
+
+      <section class="control-panel" aria-label="表示の設定">
+        <fieldset class="period-control">
+          <legend>時間帯</legend>
+          <label>
+            <input type="radio" name="period" value="day" checked>
+            <span>昼（6〜22時）</span>
+          </label>
+          <label>
+            <input type="radio" name="period" value="night">
+            <span>夜（22〜6時）</span>
+          </label>
+        </fieldset>
+
+        <label class="check-control">
+          <input id="dim-no-sources" type="checkbox">
+          <span>対象道路の圏外の建物を薄く表示</span>
+        </label>
+
+        <div class="legend" aria-label="騒音の色スケール（40〜80デシベル）">
+          <div class="legend-heading">
+            <span>LAeq</span>
+            <span>dB</span>
+          </div>
+          <div class="legend-ramp"></div>
+          <div class="legend-labels">
+            <span>40</span><span>50</span><span>60</span><span>70</span><span>80</span>
+          </div>
+          <p><span class="no-data-swatch"></span>灰色 = データなし</p>
+        </div>
+
+        <p id="status" class="status" role="status">データを読み込んでいます…</p>
+        <p class="hint">建物をクリックすると階ごとの値を表示します。</p>
+      </section>
+    </main>
+    <script type="module" src="./dist/app.js"></script>
+  </body>
+</html>
