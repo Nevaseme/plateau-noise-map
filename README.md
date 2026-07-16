@@ -19,10 +19,10 @@
 
 ## 使用データ
 
-| データ | 発行元 | このプロジェクトでの用途 | 入手先・ライセンス |
+| データ | 発行元 | 入手先・ライセンス |
 |---|---|---|---|
-| PLATEAU 3D都市モデル 杉並区 2024年度（CityGML） | 国土交通省 | 建物の形・高さ・階数。音をさえぎる障害物と、階ごとの受音点の生成 | [G空間情報センター](https://www.geospatial.jp/ckan/dataset/plateau-13115-suginami-ku-2024)（オープンデータ・出典明記で利用可） |
-| 令和3年度 道路交通センサス（箇所別基本表・時間帯別交通量表） | 国土交通省 | 区間ごとの交通量・大型車混入率・旅行速度。音源の強さの根拠 | [国土交通省](https://www.mlit.go.jp/road/census/r3/) |
-| 道路中心線 | © OpenStreetMap contributors | センサスの調査区間（表データ）を地図上の線に対応付ける骨格 | [ODbL](https://www.openstreetmap.org/copyright) |
-| 自動車騒音 常時監視結果（令和5年度） | 東京都環境局 | 計算値と実測値の答え合わせ（検証）。計算には未使用 | [東京都環境局](https://www.kankyo.metro.tokyo.lg.jp/vehicle/noise/result/cyousakekka/reiwa5) |
-| ASJ RTN-Model 2018（計算式） | 日本音響学会 | 車のパワーレベル・距離減衰・回折の予測式一式 | [国総研 参考資料PDF](https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1124pdf/ks1124_08.pdf)（学会誌75巻4号の転載・全文公開） |
+| PLATEAU 3D都市モデル 杉並区 2024年度（CityGML） | 国土交通省 | [G空間情報センター](https://www.geospatial.jp/ckan/dataset/plateau-13115-suginami-ku-2024)（オープンデータ・出典明記で利用可） |
+| 令和3年度 道路交通センサス（箇所別基本表・時間帯別交通量表） | 国土交通省 | [国土交通省](https://www.mlit.go.jp/road/census/r3/) |
+| 道路中心線 | © OpenStreetMap contributors | [ODbL](https://www.openstreetmap.org/copyright) |
+| 自動車騒音 常時監視結果（令和5年度） | 東京都環境局 |  [東京都環境局](https://www.kankyo.metro.tokyo.lg.jp/vehicle/noise/result/cyousakekka/reiwa5) |
+| ASJ RTN-Model 2018（計算式） | 日本音響学会 | [国総研 参考資料PDF](https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1124pdf/ks1124_08.pdf)（学会誌75巻4号の転載・全文公開） |
